@@ -4,6 +4,9 @@ var app = new Vue({
     return {
       message: "Hello from JavaScript!",
       showInfo: true,
+      isEcoFriendly: false,
+      fruits: ["raspberry", "strawberry", "cantalope", "apple"],
+      newFruit: ""
     };
   },
   methods: {
@@ -19,7 +22,17 @@ var app = new Vue({
       // } else {
       //   this.showInfo = true;
       // }
+    },
+    addFruit: function () {
+      console.log("adding fruit...")
+      console.log(this.newFruit)
+      this.fruits.push(this.newFruit);
+      this.newFruit = "";
     }
+    // toggleEcoFriendly: function () {
+    //   console.log('toggling eco friendly');
+    //   this.isEcoFriendly
   }
+
 });
 
