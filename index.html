@@ -10,7 +10,14 @@
     <div id="app">
       <p>{{ message }}</p>
       <button v-on:click="changeMessage()">Click Here</button>
+
+      <hr>
+
       <p>Here is the message<input type="text" v-model="message"></p>
+
+      <hr>
+      <p v-if="showInfo">Here is some random stuff</p>
+      <button v-on:click="toggleInfo()">Toggle the info</button>
 
     </div>
     <h1>Hello from HTML!</h1>
