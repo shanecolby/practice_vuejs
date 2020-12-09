@@ -6,7 +6,8 @@ var app = new Vue({
       showInfo: true,
       isEcoFriendly: false,
       fruits: ["raspberry", "strawberry", "cantalope", "apple"],
-      newFruit: ""
+      newFruit: "",
+      todos: []
     };
   },
   methods: {
@@ -28,11 +29,17 @@ var app = new Vue({
       console.log(this.newFruit)
       this.fruits.push(this.newFruit);
       this.newFruit = "";
+    },
+    loadTodos: function () {
+      axios.get("https://jsonplaceholder.typicode.com/todos").then(response => {
+        console.log(response.data);
+        this.todos = response.data;
+      });
     }
-    // toggleEcoFriendly: function () {
-    //   console.log('toggling eco friendly');
-    //   this.isEcoFriendly
   }
+  // toggleEcoFriendly: function () {
+  //   console.log('toggling eco friendly');
+  //   this.isEcoFriendly
 
 });
 
