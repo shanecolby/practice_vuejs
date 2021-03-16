@@ -34,8 +34,12 @@ var app = new Vue({
       axios.get("https://jsonplaceholder.typicode.com/todos").then(response => {
         console.log(response.data);
         this.todos = response.data;
-      });
+      })
     }
+  },
+  created: function () {
+    console.log("in created...");
+    this.getTodos();
   }
   // toggleEcoFriendly: function () {
   //   console.log('toggling eco friendly');
